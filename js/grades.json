@@ -1,0 +1,21 @@
+{
+    "marks": {
+        "mid_max": 40,
+        "end_sem_max": 70,
+        "end_sem_contribution": 60
+    },
+
+    "grades": {
+        "S": 90,
+        "A": 80,
+        "B": 70,
+        "C": 60,
+        "D": 50,
+        "E": 40
+    },
+
+    "mid_weightage": {
+        "higher_mid": 0.8,
+        "lower_mid": 0.2
+    }
+}

@@ -1,0 +1,467 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #212529;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.project-header {
+    background: linear-gradient(135deg, #0d6efd, #084298);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 0 0 28px 28px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    margin-bottom: 35px;
+}
+
+.header-icon {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.project-header p {
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+}
+
+.card.shadow-sm {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07) !important;
+}
+
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.section-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.section-title h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.section-title p {
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-label {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 11px 14px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn {
+    border-radius: 10px;
+    padding: 11px 22px;
+    font-weight: 600;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn span {
+    margin-left: 5px;
+}
+
+
+/* ==========================================
+   MARK CARDS
+========================================== */
+
+#marksContainer .card {
+    border-left: 5px solid #0d6efd;
+    border-radius: 12px;
+}
+
+#marksContainer .card-body {
+    padding: 24px;
+}
+
+#marksContainer h5 {
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   RESULTS ANIMATION
+========================================== */
+
+#resultsSection {
+    animation: resultAppear 0.6s ease;
+}
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   TABLE CONTAINER
+========================================== */
+
+#resultsSection .table-responsive {
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   RESULT TABLE
+========================================== */
+
+#resultsSection .table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+#resultsSection .table thead th {
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 14px 12px;
+    white-space: nowrap;
+    border-color: #0d6efd;
+}
+
+#resultsSection .table tbody td {
+    text-align: center;
+    padding: 14px 12px;
+    border-color: #e9ecef;
+}
+
+#resultsSection .table tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   TABLE ROW HOVER
+========================================== */
+
+#resultsSection .table tbody tr {
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+#resultsSection .table tbody tr:hover {
+    background: #f1f6ff;
+}
+
+
+/* ==========================================
+   GRADE BADGES
+========================================== */
+
+.grade-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 50px;
+    height: 34px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+
+/* S */
+
+.grade-s {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+
+/* A */
+
+.grade-a {
+    background: #cff4fc;
+    color: #055160;
+}
+
+
+/* B */
+
+.grade-b {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+
+/* C */
+
+.grade-c {
+    background: #ffe5d0;
+    color: #984c0c;
+}
+
+
+/* D */
+
+.grade-d {
+    background: #f8d7da;
+    color: #842029;
+}
+
+
+/* E */
+
+.grade-e {
+    background: #e2e3e5;
+    color: #41464b;
+}
+
+
+/* ==========================================
+   IMPOSSIBLE MARKS
+========================================== */
+
+.impossible {
+    color: #adb5bd !important;
+    background: #f8f9fa !important;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   RESULT CARDS
+========================================== */
+
+#resultsSection > .card {
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#resultsSection > .card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.09) !important;
+}
+
+
+/* ==========================================
+   EXPLANATION BOXES
+========================================== */
+
+.info-box {
+    height: 100%;
+    padding: 22px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.info-box h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESULT NOTE
+========================================== */
+
+.result-note {
+    display: flex;
+    gap: 8px;
+
+    padding: 15px 18px;
+
+    background: #fff3cd;
+    border-radius: 10px;
+
+    color: #664d03;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.project-footer {
+    text-align: center;
+
+    padding: 30px 10px;
+
+    margin-top: 20px;
+
+    color: #6c757d;
+
+    background: white;
+
+    border-top: 1px solid #e9ecef;
+}
+
+.project-footer h6 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.project-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .project-header {
+        padding: 40px 15px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .header-icon {
+        font-size: 2.5rem;
+    }
+
+    .project-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .project-header p {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        gap: 10px;
+    }
+
+    .section-icon {
+        font-size: 1.5rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.15rem;
+    }
+
+    #resultsSection .table {
+        font-size: 0.85rem;
+    }
+
+    #resultsSection .table thead th,
+    #resultsSection .table tbody td {
+        padding: 9px 6px;
+    }
+
+    .result-note {
+        display: block;
+    }
+}
