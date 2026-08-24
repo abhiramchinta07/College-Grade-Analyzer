@@ -108,13 +108,63 @@ body {
     border: 1px solid #ced4da;
     border-radius: 10px;
     padding: 11px 14px;
-    transition: border-color 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .form-control:focus {
     border-color: #0d6efd;
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* ==========================================
+   REMOVE NUMBER INPUT ARROWS
+========================================== */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* ==========================================
+   VALIDATION
+========================================== */
+
+.form-control.is-valid {
+    border-color: #198754;
+}
+
+.form-control.is-valid:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+.validation-message {
+    display: none;
+    margin-top: 6px;
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+.validation-message.show {
+    display: block;
 }
 
 
@@ -126,13 +176,17 @@ body {
     border-radius: 10px;
     padding: 11px 22px;
     font-weight: 600;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
 .btn span {
@@ -153,8 +207,24 @@ body {
     padding: 24px;
 }
 
+#marksContainer h4,
 #marksContainer h5 {
     font-weight: 700;
+}
+
+
+/* ==========================================
+   OBE SECTION
+========================================== */
+
+.obe-section {
+    margin-top: 10px;
+    padding: 15px;
+
+    background: #f8f9fa;
+
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
 }
 
 
@@ -186,6 +256,7 @@ body {
 
 #resultsSection .table-responsive {
     border-radius: 12px;
+    overflow-x: auto;
 }
 
 
@@ -201,16 +272,23 @@ body {
 #resultsSection .table thead th {
     background: #0d6efd;
     color: white;
+
     text-align: center;
+
     font-weight: 600;
+
     padding: 14px 12px;
+
     white-space: nowrap;
+
     border-color: #0d6efd;
 }
 
 #resultsSection .table tbody td {
     text-align: center;
+
     padding: 14px 12px;
+
     border-color: #e9ecef;
 }
 
@@ -225,8 +303,9 @@ body {
 ========================================== */
 
 #resultsSection .table tbody tr {
-    transition: background-color 0.2s ease,
-                transform 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 #resultsSection .table tbody tr:hover {
@@ -240,6 +319,7 @@ body {
 
 .grade-badge {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -319,8 +399,9 @@ body {
 ========================================== */
 
 #resultsSection > .card {
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 #resultsSection > .card:hover {
@@ -337,9 +418,13 @@ body {
 
 .info-box {
     height: 100%;
+
     padding: 22px;
+
     background: #f8f9fa;
+
     border: 1px solid #e9ecef;
+
     border-radius: 12px;
 
     transition:
@@ -377,11 +462,13 @@ body {
 
 .result-note {
     display: flex;
+
     gap: 8px;
 
     padding: 15px 18px;
 
     background: #fff3cd;
+
     border-radius: 10px;
 
     color: #664d03;
@@ -425,7 +512,9 @@ body {
 
     .project-header {
         padding: 40px 15px;
-        border-radius: 0 0 20px 20px;
+
+        border-radius:
+            0 0 20px 20px;
     }
 
     .header-icon {
