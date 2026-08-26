@@ -1245,146 +1245,145 @@ document.addEventListener(
                     });
                 }
 
-
                 // ========================================
-                // SUMMARY TABLE
-                // ========================================
+// SUMMARY TABLE
+// ========================================
 
-                summaryTableBody.innerHTML =
-                    "";
+summaryTableBody.innerHTML = "";
 
+results.forEach(
+    function (subject) {
 
-                results.forEach(
-                    function (subject) {
+        const row =
+            document.createElement("tr");
 
-                        const row =
-                            document.createElement(
-                                "tr"
-                            );
+        // Mid contribution display
+        let midDisplay;
 
+        if (subject.hasOBE) {
+            midDisplay =
+                `${subject.midContribution.toFixed(2)} / 20`;
+        } else {
+            midDisplay =
+                `${subject.midContribution.toFixed(2)} / 30`;
+        }
 
-                        row.innerHTML = `
+        // OBE contribution display
+        let obeDisplay;
 
-                            <td>
-                                ${subject.name}
-                            </td>
+        if (subject.hasOBE) {
+            obeDisplay =
+                `${subject.obeContribution.toFixed(2)} / 10`;
+        } else {
+            obeDisplay = "--";
+        }
 
-                            <td>
-                                ${subject.weightedMid.toFixed(2)}
-                                / 40
-                            </td>
+        row.innerHTML = `
 
-                            <td>
-                                ${subject.maxScore.toFixed(2)}
-                                / 100
-                            </td>
+            <td>
+                ${subject.name}
+            </td>
 
-                            <td>
-                                <strong>
-                                    ${subject.maxGrade}
-                                </strong>
-                            </td>
+            <td>
+                ${subject.weightedMid.toFixed(2)} / 40
+            </td>
 
-                        `;
+            <td>
+                ${midDisplay}
+            </td>
 
+            <td>
+                ${obeDisplay}
+            </td>
 
-                        summaryTableBody
-                            .appendChild(row);
-                    }
-                );
+            <td>
+                ${subject.internal.toFixed(2)} / 30
+            </td>
 
+            <td>
+                ${subject.maxScore.toFixed(2)} / 100
+            </td>
 
-                // ========================================
-                // END-SEM TARGET TABLE
-                // ========================================
+            <td>
+                <strong>
+                    ${subject.maxGrade}
+                </strong>
+            </td>
 
-                targetTableBody.innerHTML =
-                    "";
+        `;
 
+        summaryTableBody.appendChild(row);
+    }
+);
 
-                results.forEach(
-                    function (subject) {
+            // ========================================
+// END-SEM TARGET TABLE
+// ========================================
 
+targetTableBody.innerHTML = "";
 
-                        const row =
-                            document.createElement(
-                                "tr"
-                            );
+results.forEach(
+    function (subject) {
 
+        const row =
+            document.createElement("tr");
 
-                        let cells = `
+        let cells = `
 
-                            <td>
-                                ${subject.name}
-                            </td>
+            <td>
+                ${subject.name}
+            </td>
 
-                        `;
+        `;
 
+        Object.entries(grades).forEach(
+            function ([grade, target]) {
 
-                        Object.entries(
-                            grades
-                        ).forEach(
-                            function (
-                                [grade, target]
-                            ) {
+                const required =
+                    requiredEndSem(
+                        subject.internal,
+                        target
+                    );
 
+                let display;
 
-                                const required =
-                                    requiredEndSem(
-                                        subject.internal,
-                                        target
-                                    );
+                if (required <= 0) {
 
+                    // Already achieved from internal marks
+                    display = "Done";
 
-                                let display;
+                }
+                else if (required > 70) {
 
+                    // Impossible even with 70/70 End-Sem
+                    display = "--";
 
-                                if (
-                                    required <= 0
-                                ) {
+                }
+                else {
 
-                                    display =
-                                        "Done";
+                    // Minimum whole End-Sem marks required
+                    const requiredMarks =
+                        Math.ceil(required);
 
-                                }
-                                else if (
-                                    required > 70
-                                ) {
+                    display =
+                        `${requiredMarks} / 70`;
+                }
 
-                                    display =
-                                        "--";
+                cells += `
 
-                                }
-                                else {
+                    <td>
+                        ${display}
+                    </td>
 
-                                    // Same as Python math.ceil()
-                                    display =
-                                        Math.ceil(
-                                            required
-                                        );
-                                }
+                `;
+            }
+        );
 
+        row.innerHTML = cells;
 
-                                cells += `
-
-                                    <td>
-                                        ${display}
-                                    </td>
-
-                                `;
-                            }
-                        );
-
-
-                        row.innerHTML =
-                            cells;
-
-
-                        targetTableBody
-                            .appendChild(row);
-                    }
-                );
-
+        targetTableBody.appendChild(row);
+    }
+);
 
                 // ========================================
                 // SHOW RESULTS
